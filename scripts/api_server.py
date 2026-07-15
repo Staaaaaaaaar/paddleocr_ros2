@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field
 ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT_DIR / "src"))
 
-from meter_ocr import is_calibrated, load_calib_config, recognize, save_calib_config  # noqa: E402
+from paddle_ocr import is_calibrated, load_calib_config, recognize, save_calib_config  # noqa: E402
 
 app = FastAPI(
     title="PaddleOCR Pipeline Locator Screen API",

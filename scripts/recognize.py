@@ -13,7 +13,7 @@ import cv2
 ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT_DIR / "src"))
 
-from meter_ocr import is_calibrated, load_calib_config, recognize  # noqa: E402
+from paddle_ocr import is_calibrated, load_calib_config, recognize  # noqa: E402
 
 
 def main() -> int:

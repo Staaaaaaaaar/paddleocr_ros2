@@ -52,7 +52,7 @@
 │   ├── recognize.py        # CLI：读图输出 JSON
 │   └── api_server.py       # HTTP API 服务
 ├── src/
-│   └── meter_ocr/          # 识别核心库
+│   └── paddle_ocr/          # 识别核心库
 ├── output/                 # 调试输出（--debug 时生成）
 ├── requirements.txt
 ├── environment.yml

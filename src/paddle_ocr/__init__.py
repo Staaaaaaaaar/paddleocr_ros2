@@ -4,7 +4,7 @@
 设备信息为占位符，部署前请根据实际型号更新 config/ 标定。
 """
 
-from meter_ocr.core import (
+from paddle_ocr.core import (
     is_calibrated,
     load_calib_config,
     recognize,

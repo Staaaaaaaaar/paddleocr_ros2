@@ -8,7 +8,7 @@ from typing import Any
 import cv2
 import numpy as np
 
-from meter_ocr.paths import DIGIT_SLOTS_CONFIG, TEMPLATE_DIR
+from paddle_ocr.paths import DIGIT_SLOTS_CONFIG, TEMPLATE_DIR
 
 _DEFAULT_SLOTS = {
     "current": {

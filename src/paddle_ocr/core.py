@@ -10,12 +10,12 @@ from typing import Any
 import cv2
 import numpy as np
 
-from meter_ocr.digit_reader import (
+from paddle_ocr.digit_reader import (
     ensure_digit_templates,
     read_meter_digits,
     read_percent_display,
 )
-from meter_ocr.paths import COMPASS_CONFIG, OUTPUT_DIR, ROI_CONFIG
+from paddle_ocr.paths import COMPASS_CONFIG, OUTPUT_DIR, ROI_CONFIG
 
 warnings.filterwarnings("ignore")
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
