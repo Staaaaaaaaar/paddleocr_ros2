@@ -1,10 +1,9 @@
-"""PaddleOCR 管线仪屏幕识别 HTTP API。"""
+"""PaddleOCR pipeline locator screen recognition HTTP API."""
+
 from __future__ import annotations
 
-import sys
 import threading
 import time
-from pathlib import Path
 from typing import Any
 
 import cv2
@@ -13,14 +12,11 @@ import uvicorn
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT_DIR / "src"))
-
-from paddle_ocr import is_calibrated, load_calib_config, recognize, save_calib_config  # noqa: E402
+from paddle_ocr import is_calibrated, load_calib_config, recognize, save_calib_config
 
 app = FastAPI(
     title="PaddleOCR Pipeline Locator Screen API",
-    description="OCR API for a specific pipeline locator model (<MODEL_NAME>).",
+    description="OCR API for a specific pipeline locator model.",
     version="1.0.0",
 )
 
@@ -169,8 +165,10 @@ async def recognize_api(
 
 
 def main() -> None:
-    host = "127.0.0.1"
-    port = 8000
+    import os
+
+    host = os.environ.get("PADDLE_OCR_API_HOST", "127.0.0.1")
+    port = int(os.environ.get("PADDLE_OCR_API_PORT", "8000"))
     uvicorn.run(app, host=host, port=port)
 
 

@@ -1,0 +1,26 @@
+pipeline_locator_node:
+  ros__parameters:
+    # 订阅的图像话题
+    image_topic: "/camera/image_raw"
+    # raw: sensor_msgs/Image, compressed: sensor_msgs/CompressedImage
+    image_type: "raw"
+
+    # 识别结果发布话题
+    output_topic: "/pipeline_locator/sensor"
+
+    # 向识别 HTTP 服务发起请求的频率 (Hz)
+    inference_rate_hz: 2.0
+
+    # 输出消息 header.frame_id
+    output_frame_id: "pipeline_locator"
+
+    # 识别 HTTP 服务地址（recognition_service 需在 conda 环境单独启动）
+    api_base_url: "http://127.0.0.1:8000"
+    api_timeout_sec: 5.0
+
+    # 是否让识别服务保存调试图到 recognition_service/output/
+    debug: false
+
+    # 图像订阅 QoS: best_effort | reliable
+    qos_reliability: "best_effort"
+    qos_history_depth: 1

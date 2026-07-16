@@ -4,11 +4,14 @@ __pycache__/
 .eggs/
 dist/
 build/
+install/
+log/
 .venv/
 .env
 
 # 运行时输出
 output/
+recognition_service/output/
 
 # 模型压缩包（解压后使用 .paddleocr/）
 .paddleocr.zip
