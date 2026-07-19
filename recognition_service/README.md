@@ -1,7 +1,7 @@
 # 识别 HTTP 服务
 
 本目录包含**管线仪屏幕识别**的全部逻辑，需在 conda 环境 `ocr` 中运行。  
-目录带有 `COLCON_IGNORE`，**不会**被 colcon 当作 ROS 包编译。
+目录带有 `COLCON_IGNORE`，**不会**被上级 colcon 工作区（[screen_ocr_ros2](../README.md)）编译。
 
 基于 OpenCV 的固定 ROI + 七段 LCD 模板匹配，从实拍截图中解析仪表读数。
 
