@@ -9,11 +9,9 @@
 | 固件版本 | `<FIRMWARE_VERSION>` |
 | 备注 | `<NOTES>` |
 
-本目录（`recognition_service/config/`）与 `assets/digit_templates/` 中的标定数据仅对上述型号有效。
+本仓库 `config/` 与 `assets/digit_templates/` 中的标定数据仅对上述型号有效。
+更换设备后请重新标定并更新本文件。
 
-更换设备后请：
+## 示例截图
 
-1. 更新本文件
-2. 重新标定 `rois.json`、`compass.json`、`digit_slots.json`
-3. 删除 `assets/digit_templates/` 并重新运行识别以生成模板
-4. 重启识别 HTTP 服务
+`examples/images/` 目录包含 47 张该型号设备的示例截图，命名格式为 `image0000001.png` ~ `image0000047.png`（7 位数字补零）。

@@ -1,0 +1,8 @@
+# 核心依赖（固定 ROI + OpenCV 模板识别）
+numpy==1.23.5
+opencv-python==4.6.0.66
+
+# HTTP API
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.20

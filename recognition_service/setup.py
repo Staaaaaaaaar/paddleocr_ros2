@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 
 def _requirements() -> list[str]:
-    req_file = Path(__file__).resolve().parent.parent / "requirements.txt"
+    req_file = Path(__file__).resolve().parent / "requirements.txt"
     lines: list[str] = []
     for raw in req_file.read_text(encoding="utf-8").splitlines():
         line = raw.strip()
@@ -14,14 +14,9 @@ def _requirements() -> list[str]:
 
 
 setup(
-    name="paddle-ocr-recognition-service",
+    name="screen-ocr-recognition-service",
     version="1.0.0",
-    packages=find_packages(),
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     install_requires=_requirements(),
-    entry_points={
-        "console_scripts": [
-            "paddle_ocr_api = paddle_ocr.api_server:main",
-            "paddle_ocr_recognize = paddle_ocr.recognize_cli:main",
-        ],
-    },
 )
